@@ -87,7 +87,7 @@ function createNav(pageNum) {
    nav.innerHTML = "";
    nav.setAttribute('class', 'navbar navbar-expand-lg navbar-light fixed-top');
 
-   nav.innerHTML += "<a class='navbar-brand'>학대만화</a>";
+   nav.innerHTML += "<a class='navbar-brand' href='https://github.com/shangus1012/manga'>학대만화</a>";
    button();//function
 
    pageList(pageNum);//function
