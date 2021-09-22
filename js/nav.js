@@ -3,6 +3,7 @@
  */
 var nav, div1, div2;
 
+createNav(1);
 //=====================================================================================
 function button() {//반응형 웹페이지 구현
    var button = document.createElement("button");
