@@ -62,6 +62,7 @@
        setup(5);
     }
     else {
+       alert("error! pageNum = " + pageNum);
     }
  
     ul.appendChild(all);

@@ -2,11 +2,15 @@ var strA = "";
 var strB = "";
 var strC = "";
 var strD = "";
+var strAll = "";
 var arr;
 
 function setup(n) { //탭에 맞는 list를 set하기 위한 함수
     var temp;
-    if(n == 2) {
+    if (n == 1) {
+        temp = strAll;
+    }
+    else if(n == 2) {
         temp = strA;
     }
     else if (n == 3) {
@@ -17,9 +21,6 @@ function setup(n) { //탭에 맞는 list를 set하기 위한 함수
     }
     else if (n == 5) {
         temp = strD;
-    }
-    else if (n == 1) {
-        temp = strA + "/" + strB + "/" + strC + "/" + strD;
     }
     arr = temp.split("/");
     maketable(arr); //list set 후 테이블 생성
@@ -32,21 +33,6 @@ function maketable(arr) { // 테이블을 생성하는 함수
         var temp = "<tr onclick='copyToClipboard(" + i +");'><td>" + i + "</td>" + "<td>" + arr[i] + "</td></tr>";
         tbody.innerHTML += temp;
     }
-}
-
-function copyToClipboard(i) { //copy 함수
-    const t = document.createElement("textarea");
-    document.body.appendChild(t);
-    t.value = deleteETC(arr[i]);
-    t.select();
-    document.execCommand('copy');
-    document.body.removeChild(t);
-  }
-
-function deleteETC(str) { //복사할 텍스트에서 설명문을 지우기 위한 함수
-    var temp = str.replace("~", "").split("(");
-    alert("복사됨 [" + temp[0] + "]");
-    return temp[0];
 }
 
 /*
