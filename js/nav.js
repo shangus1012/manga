@@ -18,7 +18,7 @@
     nav.appendChild(button);
  }
  
- function pageList(pageNum) {//페이지 목록 구현
+ function pageList(pageNum) {//탭목록 구현
     var div = document.createElement('div');
     div.setAttribute('class', 'collapse navbar-collapse');
     div.setAttribute('id', 'navbarNav');
@@ -44,27 +44,22 @@
     if (pageNum == 1) {//전체
        all.innerHTML = "<a class='nav-link active' href='javascript:void(0);' onclick='createNav(1)'>전체</a>";
        setup(1);
-       maketable();
     }
     else if (pageNum == 2) {//약피폐
        bbsA.innerHTML = "<a class='nav-link active' href='javascript:void(0);' onclick='createNav(2)'>약피폐</a>";
        setup(2);
-       maketable();
     }
     else if (pageNum == 3) {//연재
        bbsB.innerHTML = "<a class='nav-link active' href='javascript:void(0);' onclick='createNav(3)'>연재</a>";
        setup(3);
-       maketable();
     }
     else if (pageNum == 4) {//낙태
        bbsC.innerHTML = "<a class='nav-link active' href='javascript:void(0);' onclick='createNav(4)'>낙태</a>";
        setup(4);
-       maketable();
     }
     else if (pageNum == 5) { //완결
        bbsD.innerHTML = "<a class='nav-link active' href='javascript:void(0);' onclick='createNav(5)'>완결</a>";
        setup(5);
-       maketable();
     }
     else {
     }
@@ -81,7 +76,7 @@
  }
  //==================================================================================
  
- function createNav(pageNum) {
+ function createNav(pageNum) { // nav를 생성하는 함수
     nav = document.getElementById("nav");
     nav.innerHTML = "";
     nav.setAttribute('class', 'navbar navbar-expand-lg navbar-light fixed-top');
@@ -91,3 +86,10 @@
  
     pageList(pageNum);//function
  }
+
+ /*
+    source : https://github.com/shangus1012/manga
+    제작자 : 만갤 여주학대만화추천(rmh0102)
+    모든 소스코드는 직접 작성한 것이고, 출처는 지워도 상관 없습니다.
+    그러나 정보 공유를 위해 누군가 물어본다면 출처를 표기해 주세요. 감사합니다.
+*/
