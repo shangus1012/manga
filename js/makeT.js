@@ -3,15 +3,16 @@ var strB = "";
 var strC = "";
 var strD = "";
 var strAll = "";
-var arrA = strA.split("/");
-var arrB = strB.split("/");
-var arrC = strC.split("/");
-var arrD = strD.split("/");
-var arrAll = strAll.split("/");
+
+var arrA;
+var arrB;
+var arrC;
+var arrD;
+var arrAll;
+
 var arrT;
 
 function setup(n) { //탭에 맞는 list를 불러오기 위한 함수
-    var temp;
     if (n == 1) {
         maketable(arrAll);
     }
