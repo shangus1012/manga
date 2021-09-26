@@ -2,3 +2,4 @@ this is empty file
 this is empty file
 this is empty file
 this is empty file
+.
