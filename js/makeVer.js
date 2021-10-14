@@ -1,8 +1,7 @@
+//list.js 파일을 로드할 때 랜덤한 version을 붙이는 과정. 캐시를 불러오지 않게 하기 위해 사용한다
 var script = document.getElementById("script");
 linkStr = "js/list.js?ver=" + Math.floor(Math.random() * 100) + 1;
 script.setAttribute('src', linkStr);
-
-//list.js 파일을 로드할 때 랜덤한 version을 붙이는 함수
 
 
 /*

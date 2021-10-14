@@ -1,8 +1,8 @@
-var strA = "";
-var strB = "";
-var strC = "";
-var strD = "";
-var strAll = "";
+var strA;
+var strB;
+var strC;
+var strD;
+var strAll;
 
 var arrA;
 var arrB;
