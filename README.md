@@ -8,6 +8,5 @@
 <코드 정보>  
 nav태그는 nav.js로, table태그는 makeT.js로 동적생성하였습니다  
 list.js에 난수 버젼을 붙이는 makeVer.js를 사용하여 업데이트가 편리하도록 하였습니다  
-nav태그는 재귀함수의 형태를 띄고 있으며, nav태그에서 makeT 함수를 호출하도록 하였습니다  
-부트스트랩 4.0을 적용했습니다  
+nav.js, makeT.js, copy.js 로드 -> list.js 로드 -> list.js에서 nav.js에 있는 createNav 함수 호출 -> nav.js에서 makeT.js에 있는 setup 함수 호출 -> makeT.js에서 makeT.js에 있는 maketable 함수 호출 -> list.js로 선언한 변수들을 이용해 table 채움
 https://shangus1012.github.io/manga/
