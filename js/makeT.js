@@ -33,7 +33,7 @@ function setup(n) { //탭에 맞는 list를 불러오기 위한 함수
 function maketable(arr) { // 테이블을 생성하는 함수
     var tbody = document.getElementById("table");
     tbody.innerHTML = "";
-    for (i = 0; i < arr.length - 1; i++) {
+    for (i = 0; i < arr.length; i++) {
         var temp = "<tr onclick='copyToClipboard(" + i +");'><td>" + i + "</td>" + "<td>" + arr[i] + "</td></tr>";
         tbody.innerHTML += temp;
     }

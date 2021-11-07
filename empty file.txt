@@ -5,7 +5,3 @@ this is empty file
 .
 .
 .
-.
-.
-.
-.
