@@ -32,11 +32,11 @@ function calcHeight() {
 
 function toggle() {
     var target = document.getElementById("btn");
-    if(target.innerHTML == "만화 링크 열기 ▶") {
-        target.innerHTML = "만화 링크 닫기 ▼";
+    if(target.innerHTML == "만화 링크 펼치기 ▶") {
+        target.innerHTML = "만화 링크 숨기기 ▼";
     }
     else {
-        target.innerHTML = "만화 링크 열기 ▶";
+        target.innerHTML = "만화 링크 펼치기 ▶";
     }
 }
 
