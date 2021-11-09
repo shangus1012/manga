@@ -4,21 +4,10 @@ function sleep(ms) {
         return setTimeout(resolve, ms);
     });
 }
-//#link의 class가 collapse show면 resolve, 아니면 reject
-function isOpen() {
-    return new Promise(function (resolve) {
-        var target = document.getElementById("link");
-        var attrValue = target.getAttribute('class');
-        if (attrValue != "collapse show") {
-            sleep(1).then(() => isOpen());
-        }
-        resolve();
-    });
-}
-//1ms 쉬고 isOpen 호출, isOpen으로부터 resolve 받으면 calcHeight 호출, reject 받으면 test 호출
+
+//1ms 쉬고 calcHeight() 호출, 비동기 함수이므로 이 함수가 본문에서 호출된 직후 그 다음 동작이 먼저 실행된다.
 function test() {
-    sleep(1).then(() => isOpen())
-        .then(() => calcHeight());
+    sleep(1).then(() => calcHeight());
 }
 
 
@@ -29,6 +18,7 @@ function calcHeight() {
     return 1;
 }
 
+//클릭 시 버튼 텍스트 바꾸기
 function toggle() {
     var target = document.getElementById("btn");
     var temp = document.getElementById("link");
