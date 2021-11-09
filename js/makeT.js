@@ -12,7 +12,8 @@ var arrAll;
 
 var arrT;
 
-function setup(n) { //탭에 맞는 list를 불러오기 위한 함수
+//탭에 맞는 list를 불러오기 위한 함수
+function setup(n) { 
     if (n == 1) {
         maketable(arrAll);
     }
@@ -30,7 +31,8 @@ function setup(n) { //탭에 맞는 list를 불러오기 위한 함수
     }
 }
 
-function maketable(arr) { // 테이블을 생성하는 함수
+// 테이블을 생성하는 함수
+function maketable(arr) { 
     var tbody = document.getElementById("table");
     tbody.innerHTML = "";
     for (i = 0; i < arr.length; i++) {
@@ -43,6 +45,6 @@ function maketable(arr) { // 테이블을 생성하는 함수
 /*
     source : https://github.com/shangus1012/manga
     제작자 : 만갤 여주학대만화추천(rmh0102)
-    모든 소스코드는 직접 작성한 것이고, 출처는 지워도 상관 없습니다.
+    모든 소스코드는 직접 작성한 것이고, 출처는 굳이 지워야만 한다면 상관 없습니다.
     누군가 물어본다면 정보 공유를 위해서 출처를 표기해 주세요. 감사합니다.
 */
