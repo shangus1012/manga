@@ -6,11 +6,11 @@ function sleep(ms) {
 }
 //#link의 class가 collapse show면 resolve, 아니면 reject
 function isOpen() {
-    return new Promise(function (resolve, reject) {
+    return new Promise(function (resolve) {
         var target = document.getElementById("link");
         var attrValue = target.getAttribute('class');
         if (attrValue != "collapse show") {
-            reject();
+            sleep(1).then(() => isOpen());
         }
         resolve();
     });
@@ -18,8 +18,7 @@ function isOpen() {
 //1ms 쉬고 isOpen 호출, isOpen으로부터 resolve 받으면 calcHeight 호출, reject 받으면 test 호출
 function test() {
     sleep(1).then(() => isOpen())
-    .then(() => calcHeight())
-    .catch(() => test());
+        .then(() => calcHeight());
 }
 
 
@@ -32,17 +31,21 @@ function calcHeight() {
 
 function toggle() {
     var target = document.getElementById("btn");
-    if(target.innerHTML == "만화 링크 펼치기 ▶") {
-        target.innerHTML = "만화 링크 숨기기 ▼";
-    }
-    else {
-        target.innerHTML = "만화 링크 펼치기 ▶";
+    var temp = document.getElementById("link");
+    var attrValue = temp.getAttribute('class');
+    if (attrValue != "collapsing") {
+        if (target.innerHTML == "만화 링크 펼치기 ▶") {
+            target.innerHTML = "만화 링크 숨기기 ▼";
+        }
+        else {
+            target.innerHTML = "만화 링크 펼치기 ▶";
+        }
     }
 }
 
- /*
-    source : https://github.com/shangus1012/manga
-    제작자 : 만갤 여주학대만화추천(rmh0102)
-    모든 소스코드는 직접 작성한 것이고, 출처는 굳이 지워야만 한다면 상관 없습니다.
-    누군가 물어본다면 정보 공유를 위해서 출처를 표기해 주세요. 감사합니다.
+/*
+   source : https://github.com/shangus1012/manga
+   제작자 : 만갤 여주학대만화추천(rmh0102)
+   모든 소스코드는 직접 작성한 것이고, 출처는 굳이 지워야만 한다면 상관 없습니다.
+   누군가 물어본다면 정보 공유를 위해서 출처를 표기해 주세요. 감사합니다.
 */
