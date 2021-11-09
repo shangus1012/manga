@@ -49,3 +49,7 @@ body {
 table {
 	background-color: white !important;
 }
+
+.iframe {
+	border: none;
+}
