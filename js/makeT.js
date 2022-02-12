@@ -36,7 +36,7 @@ function maketable(arr) {
     var tbody = document.getElementById("table");
     tbody.innerHTML = "";
     for (i = 0; i < arr.length; i++) {
-        var temp = "<tr onclick='copyToClipboard(" + i +");'><td>" + i + "</td>" + "<td>" + arr[i] + "</td></tr>";
+        var temp = "<tr onclick='copyToClipboard(" + i +");'><td>" + i + 1 + "</td>" + "<td>" + arr[i] + "</td></tr>";
         tbody.innerHTML += temp;
     }
     arrT = arr;
