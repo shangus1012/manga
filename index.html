@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>학대 만화 리스트</title>
+    <link rel="stylesheet" href="css/myCSS.css">
+    <link rel="icon" href="media/favicon.ico" type="image/x-icon" sizes="16x16">
+</head>
+
+<body>                            
+    <a href="https://github.com/shangus1012/manga" target="_blank">만화모음</a>
+    <div class="container">
+        <div class="row">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            <a href="https://github.com/shangus1012/manga" target="_blank">만화모음</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 8%">번호</th>
+                        <th style="width: 77%">제목</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        //body에 리스트 동적 추가하는 함수
+        function displayList(list) {
+            var table = document.getElementById("table");
+
+            for(var i=0; i<list.length; i++) {
+                var num = document.createElement("td");
+                num.innerHTML = i + 1;
+
+                var td = document.createElement("td");
+                td.innerHTML = list[i];
+                
+                var tr = document.createElement("tr");
+                tr.appendChild(num);
+                tr.appendChild(td);
+
+                table.appendChild(tr);
+            }
+        }
+        //html 문서 로드 -> list.js 파일 로드 -> displayList() 실행
+        window.addEventListener("DOMContentLoaded", function() {
+            var script = document.createElement("script");
+            //list.js 파일을 로드할 때 랜덤 version으로 로드 (브라우저가 캐시 로드하는 것을 방지)
+            script.src = "js/list.js?ver=" + Math.floor(Math.random() * 100) + 1;
+            //links.js 파일 로드 후 실행할 콜백 함수 지정
+            script.onload = function() {
+                displayList(list);
+            };
+            document.head.appendChild(script);
+        })
+    </script>
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</html>
+
+<!--
+    source : https://github.com/shangus1012/manga
+-->

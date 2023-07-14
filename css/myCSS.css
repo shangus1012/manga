@@ -1,0 +1,26 @@
+table {
+	cursor: pointer;
+	text-align: center; 
+	border: 1px solid #dddddd;
+}
+
+table th {
+	background-color: #eeeeee; 
+	text-align: center; 
+}
+
+p {
+	font-size: 20px;
+}
+
+body {
+	background-color: #E0E7E9;
+}
+
+table {
+	background-color: white !important;
+	border-spacing: 0;
+}
+a {
+	text-decoration: none;
+}
